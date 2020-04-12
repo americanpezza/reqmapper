@@ -1,0 +1,7 @@
+excel
+#mekk.xmind>=0.5.0
+lxml
+certifi
+nltk
+progressbar2
+pyyaml

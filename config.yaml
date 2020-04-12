@@ -1,0 +1,88 @@
+{
+  # The attributes associated with a requirement.
+  # In detail:
+  # - "colNames" should contain one or more strings that are found in the headers line of the spreadsheet. The parser will look in the first line to identify the headers and assigna a meaning to some columns. Many strings can be found, to cover a larger range of possibilities (es.: multiple files). The match is case-sensitive
+  # - "required" indicates an attribute that needs to be found in each file, otherwise the parsing fails. There are 4 default mandatory attributes ("ID", "CodeName", "Requirement" and "Link") that are mandatory and cannot be removed (unless you really know what you're doing). You can add more required columns if needed
+  # - "values" specifies a range of values for the attribute. If defined, it implies that this attribute is not freetext anymore, but its value needs to be picked between the supplied options in this setting
+  # - "markers" contains a range of markers that will be used in XMind to graphically render the attribute (es.: the icons for 1 to 3 to indeicate the priority). The markers indicated in this parameter are associated to the values indicated in the "values" parameter, by order
+  # - "default" indicates the default value for this attribute
+  # - "aliases" contains an array of alternate values that can be found in the data. If an alias is found, when rednering the mindmap the parser will replace it with the corresponding value in the "values" parameter. Aliases values have to be lowercase, as the matching is done ignoring the case
+  # - "description" contains a user-consumable description of the attribute, which will be rendered in the mindmap legend
+  #
+  # WARNING: The attributes "ID", "CodeName", "Requirement" and "Link" are mandatory and cannot be removed (unless you really know what you're doing...).
+  #
+  "attributes": {
+      "ID": {
+          "colNames": ["id", "ID"],
+          "required": True
+      },
+      "CodeName": {
+          "colNames": ['CodeName'],
+          "required": True
+      },
+      "Requirement": {
+          "colNames": [ "Business Requirements", "Requirement Text", "User Requirements", "Requirement"],
+          "required": True
+      },
+      "Link": {
+          "colNames": ["Link", "Tracker", "External Links", "Outlink Traced Requirements"],
+          "required": True
+      },
+      "Risk": {
+              "colNames": [ "Risk" ],
+              "values": ["High", "Medium", "Low"],
+              "markers": ["flag-red", "flag-orange", "flag-dark-blue"],
+              "default": "Low",
+              "aliases": [],
+              "required": False,
+              "description": "The risk level associated with the requirement. "
+      },
+      "Priority": { 
+              "colNames": ["StakeholderPriority", "UserPriority", "Priority"],
+              "values": ["High", "Medium", "Low"], 
+              "markers": [ "priority-1", "priority-2", "priority-3"],
+              "default": "Low",
+              "aliases": [],
+              "required": False,
+              "description": "The priority level associated with the requirement. "
+      },
+      "Difficulty": { 
+              "colNames": ["Difficulty"],
+              "values": ["High", "Medium", "Low"], 
+              "markers": [ "star-red" , "star-orange", "star-dark-blue"],
+              "default": "Low",
+              "aliases": ["difficult", "medium", "easy"], # NOTE: aliases have to be lower case, as case is ignored when trying to fix attributes!
+              "required": False,
+              "description": "The difficulty level associated with the requirement. " 
+      }
+  },
+
+  # The styles used in the generated XMind map, one for each of the requirement category (business, user and system) and a generic one ('unknown') for everything else.
+
+  "styles": {
+      "unknown": {
+          "fill": "#999999",
+          "shape": "SHAPE_RECTANGLE",
+          "lineColor": "#CACACA",
+          "lineWidth": "1pt"
+      },
+      "business": {
+          "fill": "#f0BE44",
+          "shape": "SHAPE_RECTANGLE",
+          "lineColor": "#CACACA",
+          "lineWidth": "1pt"
+      },
+      "user": {
+          "fill": "#00C9CF",
+          "shape": "SHAPE_RECTANGLE",
+          "lineColor": "#CACACA",
+          "lineWidth": "1pt"
+      },
+      "system": {
+          "fill": "#37D028",
+          "shape": "SHAPE_RECTANGLE",
+          "lineColor": "#CACACA",
+          "lineWidth": "1pt"
+      } 
+  }
+} 
