@@ -55,3 +55,8 @@ reqmapper expects the datafiles in a `sources` folder in the same directory as t
 
 Attributes and the way they are named in the `sources` can be managed from the `config.yaml` file.
 
+Code
+----
+The XMind rendering logic is based on a modified version of [mekk.xmind](https://pypi.org/project/mekk.xmind/), a XMind rendering package.
+The NLTK checker is adapted from an article from [nlpforhackers.io](https://nlpforhackers.io/wordnet-sentence-similarity/).
+
