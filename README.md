@@ -37,8 +37,8 @@ reqmapper can:
 
 Some of the above may look trivial at first, but if you happen to manage 100s (or 1000s) of requirements, these features can dramatically improve the way you work with them.
 
-Use
-----
+Installation
+-----------
 reqmapper was built using Python 3.7.3 on MacOS, but also tested with other Python 3.x distributions; it also works on Windows and Linux.
 
 After cloning this repository, It can be installed using pip:
@@ -47,6 +47,8 @@ After cloning this repository, It can be installed using pip:
 
 The installation of NLTK and its own datasets can take a while, and will continue at the first execution of the script.
 
+Use
+----
 After installation is complete, reqmapper can be run as a python script from the cloned directory:
 
 `python ./reqmapper.py --help`
@@ -55,8 +57,19 @@ reqmapper expects the datafiles in a `sources` folder in the same directory as t
 
 Attributes and the way they are named in the `sources` can be managed from the `config.yaml` file.
 
+To generate a mindmap from the data in the `sources` folder:
+
+`python ./reqmapper.py` 
+
+Adding `-v` produces more information on the console about possible syntax errors in the source files.
+
+To identify potential duplicate requirements:
+
+`python ./reqmapper.py -k`
+
 Code
 ----
 The XMind rendering logic is based on a modified version of [mekk.xmind](https://pypi.org/project/mekk.xmind/), a XMind rendering package.
+
 The NLTK checker is adapted from an article from [nlpforhackers.io](https://nlpforhackers.io/wordnet-sentence-similarity/).
 
