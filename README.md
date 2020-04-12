@@ -6,7 +6,7 @@ Rationale
 ---------
 Working with large implementation projects is a complex and scary endeavour. Despite many discussions about adopting Agile techniques fully, many of these projects are run using a mixture of traditional waterfall and modern Agile tools.
 
-Requirements are a fundamental and often underestimated part of Project Management. As we tried to [describe in a LinkedIN article] (https://www.linkedin.com/pulse/semi-serious-introduction-subtle-art-requirements-mario-beccia/), capturing requirements is a long and complex endeavour, but if often a mandatory step in large projects: this mindmap generator was built to work with the requirements capture logic described in the article.
+Requirements are a fundamental and often underestimated part of Project Management. As we tried to [describe in a LinkedIN article](https://www.linkedin.com/pulse/semi-serious-introduction-subtle-art-requirements-mario-beccia/), capturing requirements is a long and complex endeavour, but if often a mandatory step in large projects: this mindmap generator was built to work with the requirements capture logic described in the article.
 
 In those situations, requirements are captured and managed using either basic tools (Excel spreadsheets?) or very sophisticated frameworks (es.: [IBM Rational DOORS](https://www.ibm.com/support/knowledgecenter/SSYQBZ_9.5.0/com.ibm.doors.requirements.doc/topics/c_welcome.html )).
 
