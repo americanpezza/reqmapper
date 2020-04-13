@@ -25,6 +25,8 @@ The mechanism followed in typical requirements capture tasks is simple:
 5. Use reqmapper to generate a mindmap from the exported files
 6. Open with XMind and enjoy!
 
+More details on the process can be found in [this article](](https://www.linkedin.com/pulse/semi-serious-introduction-subtle-art-requirements-mario-beccia/).
+
 Features
 ---------
 reqmapper can:
@@ -41,7 +43,7 @@ Installation
 -----------
 reqmapper was built using Python 3.7.3 on MacOS, but also tested with other Python 3.x distributions; it also works on Windows and Linux.
 
-After cloning this repository, It can be installed using pip:
+After cloning this repository, installation can be completed using pip:
 
 `pip install -r requirements.txt`
 
