@@ -25,7 +25,7 @@ The mechanism followed in typical requirements capture tasks is simple:
 5. Use reqmapper to generate a mindmap from the exported files
 6. Open with XMind and enjoy!
 
-More details on the process can be found in [this article](](https://www.linkedin.com/pulse/semi-serious-introduction-subtle-art-requirements-mario-beccia/).
+More details on the process can be found in [this article](https://www.linkedin.com/pulse/semi-serious-introduction-subtle-art-requirements-mario-beccia/).
 
 Features
 ---------
