@@ -45,7 +45,7 @@ reqmapper was built using Python 3.7.3 on MacOS, but also tested with other Pyth
 
 After cloning this repository, installation can be completed using pip:
 
-`pip install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
 The installation of NLTK and its own datasets can take a while, and will continue at the first execution of the script.
 
@@ -53,7 +53,7 @@ Use
 ----
 After installation is complete, reqmapper can be run as a python script from the cloned directory:
 
-`python ./reqmapper.py --help`
+`python3 ./reqmapper.py --help`
 
 reqmapper expects the datafiles in a `sources` folder in the same directory as the main script; it also expects the data files to be excel spreadsheets named with a trailing "b" for business, "u" for user and "s" for system requirements.
 
@@ -61,13 +61,22 @@ Attributes and the way they are named in the `sources` can be managed from the `
 
 To generate a mindmap from the data in the `sources` folder:
 
-`python ./reqmapper.py` 
+`python3 ./reqmapper.py` 
 
-Adding `-v` produces more information on the console about possible syntax errors in the source files.
+Adding `-v` produces more information on the console about possible syntax errors in the source files. This will produce a single mindmap with 4 sheets:
+
+1. TopDown: a map that contains grouped business requirements, linked to user requirements which are then linked to system requirements
+2. BottomUp: a map similar to the above, starting from system requirements and going all the way up to business requirements
+3. Issues: a map containing identified issues, such as orphans (e.g. requirements that are not linked by any other requirement) or nolinks (e.g. requirements that are not linking to any other requirement)
+4. Conventions: a map detailing the meaning of the symbols and other conventions used in the other ones
+
+The map can grow easily with the number of requirements contained in the sources: if this becomes a problem, the script can produce 2 separate maps (topdown and bottomup).
 
 To identify potential duplicate requirements:
 
-`python ./reqmapper.py -k`
+`python3 ./reqmapper.py -k`
+
+With the sample dataset included in the repository, this will report that requirements UREQ600 and UREQ800 have a similarity score of 1.0, e..g they're almost equal. If you look at the requirements text, they actually look different but their meaning is the same. In situations where you have several requirements, analyzing those with a high similarity score may simplifying identifying duplciates and improve the quality of the overall set. 
 
 Code
 ----
